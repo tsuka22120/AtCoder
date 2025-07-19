@@ -1,3 +1,5 @@
+// ABC415, problemb
+
 #ifndef ONLINE_JUDGE
 #define _GLIBCXX_DEBUG  //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意
                         // ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
@@ -34,19 +36,6 @@ using vs = vc<string>;
 using vvs = vv<string>;
 
 int main(){
-    string S;
-    cin >> S;
-    int count = 0;
-    for(int i = 0;i < S.size();i++){
-        if(S[i] == '#'){
-            if(count == 0){
-            cout << i + 1 << ",";
-            count++;
-            } else{
-                cout << i + 1 << endl;
-                count = 0;
-            }
-        }
-    }
+    // 問題文を挿入
     return 0;
 }

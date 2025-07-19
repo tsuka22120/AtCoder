@@ -1,3 +1,5 @@
+// ABC415, problemd
+
 #ifndef ONLINE_JUDGE
 #define _GLIBCXX_DEBUG  //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意
                         // ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
@@ -34,41 +36,6 @@ using vs = vc<string>;
 using vvs = vv<string>;
 
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    ll N, M;
-    cin >> N >> M;
-    vector<pair<ll,ll>> A(M);
-    for(int i = 0; i < M; ++i) {
-        cin >> A[i].first >> A[i].second;
-    }
-
-    // costが小さい順にソート
-    sort(A.begin(), A.end(), [](auto& a, auto& b){
-        return a.first < b.first;
-    });
-
-    priority_queue<ll> pq; // 獲得スタミナ gain が大きい順
-    ll ans = 0;
-    int idx = 0;
-
-    while (true) {
-        // cost <= N なメニューを全部ヒープへ追加
-        while (idx < M && A[idx].first <= N) {
-            pq.push(A[idx].second);
-            idx++;
-        }
-        if (pq.empty()) break;
-
-        // 最大 gain を選んで実行
-        ll gain = pq.top(); pq.pop();
-        N += gain;
-        ans++;
-        // メニューは何度でも使えるので、もう一度ヒープへ戻す
-        pq.push(gain);
-    }
-
-    cout << ans << "\n";
+    // 問題文を挿入
     return 0;
 }
