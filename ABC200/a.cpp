@@ -37,5 +37,10 @@ using vvs = vv<string>;
 
 int main(){
     // 問題文を挿入
+    int N;
+    cin >> N;
+    int ans = N /100;
+    if(N % 100 != 0)ans++;
+    cout << ans << endl;
     return 0;
 }

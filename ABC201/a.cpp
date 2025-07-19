@@ -36,6 +36,12 @@ using vs = vc<string>;
 using vvs = vv<string>;
 
 int main(){
-    // 問題文を挿入
+    int A1,A2,A3;
+    cin >> A1 >> A2 >> A3;
+    if(A1 < A2)swap(A1,A2);
+    if(A2 < A3)swap(A2,A3);
+    if(A1 < A2)swap(A1,A2);
+    if(A2 < A3)swap(A2,A3);
+    if(A1 - A2 == A2 - A3)cout << "Yes" << endl;else cout << "No" << endl;
     return 0;
-}
+    }
