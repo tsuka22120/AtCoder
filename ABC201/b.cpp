@@ -1,7 +1,7 @@
 // ABC201, problemb
 
 #ifndef ONLINE_JUDGE
-#define _GLIBCXX_DEBUG  //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意
+// #define _GLIBCXX_DEBUG  //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意
                         // ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
 #endif
 
@@ -37,5 +37,14 @@ using vvs = vv<string>;
 
 int main(){
     // 問題文を挿入
+    int N;
+    cin >> N;
+    vector<pair<ll,string>> M(N);
+    for(int i = 0;i < N;i++){
+        cin >> M[i].second;
+        cin >> M[i].first;
+    }
+    sort(M.begin(),M.end());
+    cout << M[N - 2].second << endl;
     return 0;
 }
