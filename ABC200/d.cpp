@@ -37,5 +37,14 @@ using vvs = vv<string>;
 
 int main(){
     // 問題文を挿入
+    int N;
+    cin >> N;
+    vl A(N);
+    vl mod(N);
+    for(int i = 0;i < N;i++){
+        cin >> A[i];
+        mod[i] = A[i] % 200;
+    }
+    
     return 0;
 }
