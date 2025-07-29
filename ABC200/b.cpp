@@ -37,5 +37,15 @@ using vvs = vv<string>;
 
 int main(){
     // 問題文を挿入
+    ll K,N;
+    cin >> N >> K;
+    while(K--){
+        if(N % 200 == 0)N /= 200; else{
+            string str = to_string(N);
+            str += "200";
+            N = stoll(str);
+        }
+    }
+    cout << N;
     return 0;
 }

@@ -1,7 +1,7 @@
 // ABC200, problemc
 
 #ifndef ONLINE_JUDGE
-#define _GLIBCXX_DEBUG  //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意
+//#define _GLIBCXX_DEBUG  //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意
                         // ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
 #endif
 
@@ -35,7 +35,22 @@ using vvvvl = vv<vvl>;
 using vs = vc<string>;
 using vvs = vv<string>;
 
-int main(){
+int main() {
     // 問題文を挿入
+    int N;
+    cin >> N;
+    vl A(N);
+    map<ll, ll> modCount;
+    for (int i = 0; i < N; i++) cin >> A[i];
+    ll count = 0;
+    for (int i = 0; i < N; i++) {
+        A[i] %= 200;
+        modCount[A[i]]++;
+    }
+    for (const auto& pair : modCount) {
+        ll cnt = pair.second;
+        count += cnt * (cnt - 1) / 2;
+    }
+    cout <<  count << endl;
     return 0;
 }
