@@ -4,7 +4,7 @@ import os
 with open("ex.cpp", "r", encoding="utf-8") as tf:
     base_template = tf.read()
 
-number = 417
+number = 420
 
 folder_name = f"ABC{number}"
 os.makedirs(folder_name, exist_ok=True)
