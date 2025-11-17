@@ -46,16 +46,15 @@ int main(){
     for(int i = 0;i < M;i++){
         cin >> B[i];
     }
-    int j = 0;
-    int i = 0;
-    while(1){
-        if(A[i] == B[j]){
-            A.erase(A.begin() + i);
-            j++;
-        }else i++;
-        if(i == N || j == M)break;
+    for(int i = 0;i < M;i++){
+        for(int j = 0;j < A.size();j++){
+            if(A[j] == B[i]){
+                A.erase(A.begin() + j);
+                break;
+            }
+        }
     }
-    for(int i = 0;i < N;i++){
+    for(int i = 0;i < A.size();i++){
         cout << A[i] << " ";
     }
     // 問題文を挿入
