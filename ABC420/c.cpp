@@ -1,9 +1,5 @@
 // ABC420, problemc
 
-#ifndef ONLINE_JUDGE
-#define _GLIBCXX_DEBUG  //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意
-                        // ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
-#endif
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -37,5 +33,30 @@ using vvs = vv<string>;
 
 int main(){
     // 問題文を挿入
+    ll N, Q;
+    cin >> N >> Q;
+    vl A(N),B(N);
+    for(int i = 0;i < N;i++){
+        cin >> A[i];
+    }
+    for(int i = 0;i < N;i++){
+        cin >> B[i];
+    }
+    ll out = 0;
+    vl minNum(N);
+    for(int i = 0;i < N;i++){
+        minNum[i] = min(A[i],B[i]);
+        out += minNum[i];
+    }
+    while(Q--){
+        char c;
+        ll X,V;
+        cin >> c >> X >> V;
+        if(c == 'A')A[X - 1] = V;
+        else B[X - 1] = V;
+        out = out + (min(A[X - 1],B[X - 1]) - minNum[X - 1]);
+        minNum[X - 1] = min(A[X - 1],B[X - 1]);
+        cout << out << endl;
+    }
     return 0;
 }

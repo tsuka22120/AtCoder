@@ -1,9 +1,5 @@
 // ABC{number}, problem{problem}
 
-#ifndef ONLINE_JUDGE
-#define _GLIBCXX_DEBUG  //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意
-                        // ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
-#endif
 
 #include <bits/stdc++.h>
 using namespace std;
