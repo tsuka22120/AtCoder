@@ -37,5 +37,19 @@ using vvs = vv<string>;
 
 int main(){
     // 問題文を挿入
+    ll N;
+    cin >> N;
+    vs S(N);
+    for(int i = 0;i < N;i++){
+        cin >> S[i];
+    }
+    ll X;
+    string Y;
+    cin >> X >> Y;
+    if(S[X - 1] == Y){
+        cout << "Yes" << endl;
+    }else{
+        cout << "No" << endl;
+    }
     return 0;
 }

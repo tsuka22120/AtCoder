@@ -37,5 +37,37 @@ using vvs = vv<string>;
 
 int main(){
     // 問題文を挿入
+    ll N;
+    string S;
+    cin >> N >> S;
+    int cnt1 = 0;
+    int cnt2 = 0;
+    for(int i = 0;i < N * 2;i += 2){
+        if(S[i] != 'A'){
+            int X = i;
+            int Y = i;
+            for(int j = i + 1;j < N * 2;j++){
+                if(S[j] == 'A'){
+                    Y = j;
+                    break;
+                }
+            }
+            cnt1 += abs(X - Y);
+        }
+    }
+    for(int i = 0;i < N * 2;i += 2){
+        if(S[i] != 'B'){
+            int X = i;
+            int Y = i;
+            for(int j = i + 1;j < N * 2;j++){
+                if(S[j] == 'B'){
+                    Y = j;
+                    break;
+                }
+            }
+            cnt2 += abs(X - Y);
+        }
+    }
+    cout << min(cnt1,cnt2) << endl;
     return 0;
 }

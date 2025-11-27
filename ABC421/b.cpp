@@ -13,6 +13,7 @@ using namespace std;
 
 template <typename T>
 using vc = vector<T>;  // prioriy_queueに必要なのでここにこれ書いてます
+
 template <typename T>
 using vv = vc<vc<T>>;
 
@@ -35,7 +36,18 @@ using vvvvl = vv<vvl>;
 using vs = vc<string>;
 using vvs = vv<string>;
 
-int main(){
+int main() {
     // 問題文を挿入
+    ll X, Y;
+    cin >> X >> Y;
+    vl a(10);
+    a[0] = X;
+    a[1] = Y;
+    for (int i = 2; i < 10; i++) {
+        string S = to_string(a[i - 1] + a[i - 2]);
+        reverse(S.begin(), S.end());
+        a[i] = stoll(S);
+    }
+    cout << a[9] << endl;
     return 0;
 }
